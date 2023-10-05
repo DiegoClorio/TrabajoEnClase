@@ -13,6 +13,9 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (4 == 5)
+        {
+            Debug.Log("Cosas");
+        }
     }
 }
