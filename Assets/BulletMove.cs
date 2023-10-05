@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class Movimiento : MonoBehaviour
+public class BulletMove : MonoBehaviour
 {
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +15,6 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (4 == 5)
-        {
-            Debug.Log("Cosas");
-        }
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 }
