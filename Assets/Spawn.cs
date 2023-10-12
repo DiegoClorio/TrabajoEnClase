@@ -6,8 +6,7 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject instanceObject;
-
-    public Vector3 instancePosition = new Vector3(0, 0, 0);
+    public float speed;
 
     void Start()
     {
@@ -18,7 +17,17 @@ public class Spawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(instanceObject, instancePosition, Quaternion.identity);
+            Instantiate(instanceObject, transform.position, Quaternion.identity);
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector3.up.normalized * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector3.down.normalized * speed * Time.deltaTime);
         }
     }
 }
